@@ -1,0 +1,24 @@
+Form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+input {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 0.25rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+
+button:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}

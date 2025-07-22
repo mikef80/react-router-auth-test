@@ -1,13 +1,13 @@
+import SignupLoginBlock from "~/components/SignupLoginBlock/Signup";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "React Router 7 Auth Test" },
+    { name: "description", content: "Welcome to React Router 7 - Auth Test!" },
   ];
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <SignupLoginBlock />;
 }
