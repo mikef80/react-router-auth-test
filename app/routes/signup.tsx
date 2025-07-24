@@ -2,7 +2,7 @@ import type { Route } from "../+types/root";
 import { createClient } from "~/utils/supabase.server";
 
 export const action = async ({ request }: Route.ClientActionArgs) => {
-  const supabase = createClient(request);
+  const { supabase, headers } = createClient(request);
 
   let formData = await request.formData();
   let email = formData.get("email") as string;
