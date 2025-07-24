@@ -1,5 +1,11 @@
+import { ProtectedRoute } from "~/components/ProtectedRoute/ProtectedRoute";
+
 const protectedroute = () => {
-  return <div>protectedroute</div>;
+  return (
+    <ProtectedRoute>
+      <div>protectedroute</div>;
+    </ProtectedRoute>
+  );
 };
 
 export default protectedroute;
