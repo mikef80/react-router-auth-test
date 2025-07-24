@@ -2,7 +2,7 @@ import { useFetcher, useNavigation } from "react-router";
 import "./Signup.css";
 
 const Signup = () => {
-  let fetcher = useFetcher();
+  const fetcher = useFetcher();
   
   return (
     <fetcher.Form action='/signup' method='post'>

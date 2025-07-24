@@ -8,6 +8,6 @@ export const action = async ({ request }: Route.ClientActionArgs) => {
   let email = formData.get("email") as string;
   let password = formData.get("password") as string;
 
-  const { data, error } = await supabase.auth.signUp({ email, password });
-  console.log(data, "<--signup.tsx data");
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  console.log(data, "<--login.tsx data");
 };

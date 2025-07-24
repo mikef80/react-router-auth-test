@@ -1,4 +1,5 @@
-import SignupLoginBlock from "~/components/SignupLoginBlock/Signup";
+import Signup from "~/components/Signup/Signup";
+import Login from "~/components/Login/Login";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -9,5 +10,10 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <SignupLoginBlock />;
+  return (
+    <>
+      <Signup />
+      <Login />
+    </>
+  );
 }
