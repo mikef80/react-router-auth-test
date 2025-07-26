@@ -6,10 +6,10 @@ const Login = () => {
 
   return (
     <fetcher.Form action='/login' method='post'>
-      <label htmlFor='email'>Email:</label>
-      <input type='email' name='email' id='email' />
-      <label htmlFor='password'>Password:</label>
-      <input type='password' name='password' id='password' />
+      <label htmlFor='loginemail'>Email:</label>
+      <input type='email' name='loginemail' id='loginemail' />
+      <label htmlFor='loginpassword'>Password:</label>
+      <input type='password' name='loginpassword' id='loginpassword' />
       <button type='submit'>Log In</button>
     </fetcher.Form>
   );
