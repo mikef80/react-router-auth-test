@@ -6,11 +6,9 @@ export function createClient(request: Request) {
   const supabaseUrl = process.env.SUPABASE_URL;
   const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-  return createServerClient(supabaseUrl!, supabaseKey!, {
+  const supabase = createServerClient(supabaseUrl!, supabaseKey!, {
     cookies: {
       getAll() {
-        const cookies = parseCookieHeader(request.headers.get("Cookie") ?? "");
-
         return parseCookieHeader(request.headers.get("Cookie") ?? "").map((cookie) => ({
           name: cookie.name,
           value: cookie.value || "",
@@ -23,4 +21,6 @@ export function createClient(request: Request) {
       },
     },
   });
+
+  return { supabase, headers };
 }
