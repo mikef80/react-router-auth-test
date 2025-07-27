@@ -6,10 +6,10 @@ const Signup = () => {
   
   return (
     <fetcher.Form action='/signup' method='post'>
-      <label htmlFor='signupemail'>Email:</label>
-      <input type='email' name='signupemail' id='signupemail' />
-      <label htmlFor='signuppassword'>Password:</label>
-      <input type='password' name='signuppassword' id='signuppassword' />
+      <label htmlFor='email'>Email:</label>
+      <input type='email' name='email' id='email' />
+      <label htmlFor='password'>Password:</label>
+      <input type='password' name='password' id='password' />
       <label htmlFor='confirmpassword'>Confirm Password:</label>
       <input type='password' name='confirmpassword' id='confirmpassword' />
       <button type='submit'>Sign Up</button>

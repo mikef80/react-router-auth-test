@@ -1,16 +1,12 @@
-import type { JSX } from "react";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useAuth } from "~/utils/auth-context";
 
 export const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
-  const { user, loading } = useAuth();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   if (!user) {
-    return <Navigate to='/' replace />;
+    return navigate("/login", { replace: true });
   }
 
   return children;
