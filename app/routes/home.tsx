@@ -1,6 +1,7 @@
 import Signup from "~/components/Signup/Signup";
 import Login from "~/components/Login/Login";
 import type { Route } from "./+types/home";
+import Logout from "~/components/Logout/Logout";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Signup />
       <Login />
+      <Logout />
     </>
   );
 }
