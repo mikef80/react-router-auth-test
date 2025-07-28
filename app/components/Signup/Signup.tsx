@@ -3,15 +3,15 @@ import "./Signup.css";
 
 const Signup = () => {
   const fetcher = useFetcher();
-  
+
   return (
     <fetcher.Form action='/signup' method='post'>
-      <label htmlFor='email'>Email:</label>
-      <input type='email' name='email' id='email' />
+      <label htmlFor='signupemail'>Email:</label>
+      <input type='email' name='signupemail' id='signupemail' />
       <label htmlFor='password'>Password:</label>
-      <input type='password' name='password' id='password' />
-      <label htmlFor='confirmpassword'>Confirm Password:</label>
-      <input type='password' name='confirmpassword' id='confirmpassword' />
+      <input type='password' name='signuppassword' id='signuppassword' />
+      <label htmlFor='signupconfirmpassword'>Confirm Password:</label>
+      <input type='password' name='signupconfirmpassword' id='signupconfirmpassword' />
       <button type='submit'>Sign Up</button>
     </fetcher.Form>
   );

@@ -3,7 +3,7 @@ import { ProtectedRoute } from "~/components/ProtectedRoute/ProtectedRoute";
 const protectedroute = () => {
   return (
     <ProtectedRoute>
-      <div>protectedroute</div>;
+      <div>protectedroute</div>
     </ProtectedRoute>
   );
 };
