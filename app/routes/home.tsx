@@ -2,6 +2,9 @@ import Signup from "~/components/Signup/Signup";
 import Login from "~/components/Login/Login";
 import type { Route } from "./+types/home";
 import Logout from "~/components/Logout/Logout";
+import { useAuth } from "~/utils/auth-context";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,11 +14,25 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  /* useEffect(() => {
+    if (!loading && user) {
+      navigate("/protectedroute");
+    }
+    console.log("Login user:", user);
+  }, [user, loading]); */
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
-      <Signup />
-      <Login />
-      <Logout />
+      {!user && <Signup />}
+      {!user && <Login />}
+      {user && <Logout />}
     </>
   );
 }
