@@ -1,8 +1,7 @@
 import { createClient } from "~/utils/supabase.server";
-import type { Route } from "../+types/root";
-import { redirect } from "react-router";
+import { redirect, type ActionFunctionArgs } from "react-router";
 
-export const action = async ({ request }: Route.ClientActionArgs) => {
+export const action = async ({ request }: ActionFunctionArgs) => {
   const { supabase, headers } = createClient(request);
   const { error } = await supabase.auth.signOut();
 
@@ -10,7 +9,5 @@ export const action = async ({ request }: Route.ClientActionArgs) => {
     return new Response("Sign out failed", { status: 401 });
   }
 
-  // headers.set("Location", "/");
-  // return new Response(null, { status: 302, headers });
   return redirect("/", { headers });
 };
