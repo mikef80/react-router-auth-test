@@ -1,3 +1,4 @@
+import { redirect } from "react-router";
 import type { Route } from "../+types/root";
 import { createClient } from "~/utils/supabase.server";
 
@@ -9,13 +10,13 @@ export const action = async ({ request }: Route.ClientActionArgs) => {
   let password = formData.get("loginpassword") as string;
 
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-  console.log(data,'<--login.tsx data');
-  
+  console.log(data, "<--login.tsx data");
 
   if (error) {
     return new Response("Login failed", { status: 401 });
   }
 
-  headers.set("Location", "/");
-  return new Response(null, { status: 302, headers });
+  /* headers.set("Location", "/");
+  return new Response(null, { status: 302, headers }); */
+  return redirect("/", { headers });
 };

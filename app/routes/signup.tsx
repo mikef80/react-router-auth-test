@@ -1,3 +1,4 @@
+import { redirect } from "react-router";
 import type { Route } from "../+types/root";
 import { createClient } from "~/utils/supabase.server";
 
@@ -10,4 +11,6 @@ export const action = async ({ request }: Route.ClientActionArgs) => {
 
   const { data, error } = await supabase.auth.signUp({ email, password });
   console.log(data, "<--signup.tsx data");
+
+  return redirect("/", { headers });
 };

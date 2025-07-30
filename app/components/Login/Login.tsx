@@ -21,6 +21,9 @@ const Login = () => {
       return;
     }
 
+    console.log(fetcher);
+    
+
     // navigate("/protectedroute");
   };
 
